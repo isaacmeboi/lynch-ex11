@@ -1,34 +1,42 @@
 package exercise11;
 
-import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
-public class solution11 {
+class ExchangeRate {
+    double c;
+    double r;
 
     private static DecimalFormat df = new DecimalFormat("0.00");
 
-        public static void main(String args[])
-        {
-            Scanner sc = new Scanner(System.in);
+    public void scn() {
+        System.out.print("How many euros are you exchanging? ");
+        Scanner sc = new Scanner(System.in);
+        this.c = sc.nextDouble();
+        System.out.print("What is the exchange rate? ");
+        this.r = sc.nextDouble();
+    }
 
-            System.out.print("How many euros are you exchanging? ");
-            double c = sc.nextDouble();
-
-            System.out.print("What is the exchange rate? ");
-            double r = sc.nextDouble();
-            double converted = c*r;
-
-            System.out.println(c+" euros at an exchange rate of "+r+" is: " + (df.format(converted)) + " U.S dollars.");
+    public void prt() {
+        System.out.println(c + " euros at an exchange rate of " + r + " is");
+        double converted = c * r;
+        System.out.println(df.format(converted) + " U.S dollars.");
+    }
+}
+    public class solution11 {
+        public static void main(String[] args) {
+            ExchangeRate ca = new ExchangeRate();
+            ca.scn();
+            ca.prt();
 
         }
     }
-/* psuedocode: wacky silly numbers. this follows suit with most other code.
-first we import both the scanner function and the decimal format. first, the
-df function is called so that the final answer is rounded up to the nearest
-cents. after that the main body is created and an instance of the scanner
-function is made to read in the values for the amount of euros (held in "c")
-and the exchange rate (held in "r"). the code outputs the currency and the
-rate and then uses these values to calculate the converted currency (held in
-"converted"). the code finally prints the final answer and uses the decimal
-format function to round it to the closest cent.
-*/
+/* haha, let's just say i can't read rules very well and a lot of these exercises will need to be redone.
+but hey! more commits am i right! :,). anyway, this code starts with importing the scanner function as well
+as the decimal function which will help in rounding the number to the closest cent. then,a class called
+"ExchangeRate" holds the double values for the rates "r" and the amount of money, currency "c". after that
+a public void is maid called "scn" which will scan in the user's inputs for the outputted prompts. public
+void prt then prints out the rate and money accordingly and then calculates the converted price by multiplying
+the two numbers. the main body then runs these two public voids before ending. it's 2 am, and now i gotta fix
+the rest.
+ */
