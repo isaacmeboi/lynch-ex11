@@ -1,7 +1,13 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 11 Solution
+ *  Copyright 2021 Isaac Lynch
+ */
+
 package exercise11;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+
 
 class ExchangeRate {
     double c;
